@@ -15,7 +15,7 @@ const principalideo = document.querySelector('.principalVideo');
 function getInterwiews () {
 
     
-fetch('http://localhost:5000/videosJournalistique')
+fetch(`${API_URL}/videosJournalistique`)
 .then(response => response.json())
 .then(data => {
     //utilisation des données recuperées dépuis la base de donnée

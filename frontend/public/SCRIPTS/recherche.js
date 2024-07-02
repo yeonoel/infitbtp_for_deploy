@@ -1,12 +1,12 @@
 const recherche_list = document.querySelector('.recherche_list');
-
+const API_URL = process.env.API_URL;
 document.addEventListener('DOMContentLoaded', function(e) {
 
     const urlParams = new URLSearchParams(window.location.search);
     const searchText = urlParams.get('q');
     console.log(searchText);
 
-    fetch(`http://localhost:5000/recherche/${encodeURIComponent(searchText)}`)
+    fetch(`${API_URL}/recherche/${encodeURIComponent(searchText)}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);

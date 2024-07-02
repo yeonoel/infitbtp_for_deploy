@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let surveysPage = document.querySelector('.surveysPage');
     const urlParams = new URLSearchParams(window.location.search);
     const surveyId = urlParams.get('surveyId');
+    const API_URL = process.env.API_URL;
     console.log("test")
-    fetch(`http://localhost:5000/sondages/${surveyId}`)
+    fetch(`${API_URL}/sondages/${surveyId}`)
         .then(reponse => reponse.json())
         .then(data => {
             console.log(data)

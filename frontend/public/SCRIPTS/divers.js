@@ -3,7 +3,7 @@ const public_reportage_list = document.querySelector('.public_reportage_list');
 const publicReportageSlideactive = document.querySelector('.publicReportageSlideactive');
 const deuxArticleGauche = document.querySelector('.deuxArticleGauche');
 
-
+const API_URL = process.env.API_URL;
 
 function deuxPremieresPhrases(texte) {
     // Utilisation d'une expression régulière pour identifier les phrases
@@ -22,7 +22,7 @@ function deuxPremieresPhrases(texte) {
 }
 
 function getArticle () {
-    fetch('http://localhost:5000/divers')
+    fetch(`${API_URL}/divers`)
     .then(response => response.json())
     .then(data => {
         console.log(data);

@@ -1,8 +1,9 @@
 
 
 const sondagepaticipe = document.querySelector('.sondagepaticipe');
+const API_URL = process.env.API_URL;
 
-fetch('http://localhost:5000/sondages')
+fetch(`${API_URL}/sondages`)
     .then(response =>  response.json())
     .then(data => {
         console.log(data)

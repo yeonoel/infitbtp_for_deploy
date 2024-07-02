@@ -3,6 +3,7 @@ const public_reportage_list = document.querySelector('.public_reportage_list');
 const publicReportageSlideactive = document.querySelector('.publicReportageSlideactive');
 const deuxArticleGauche = document.querySelector('.deuxArticleGauche');
 
+const API_URL = process.env.API_URL;
 
 
 function deuxPremieresPhrases(texte) {
@@ -22,7 +23,7 @@ function deuxPremieresPhrases(texte) {
 }
 
 function getArticle () {
-    fetch('http://localhost:5000/opinions')
+    fetch(`${API_URL}/opinions`)
     .then(response => response.json())
     .then(data => {
         console.log(data);

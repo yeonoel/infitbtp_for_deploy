@@ -16,8 +16,9 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
     };
+    const API_URL = process.env.API_URL;
 
-    fetch('http://localhost:5000/contact', { 
+    fetch(`${API_URL}/contact`, { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ const publicReportageSlideactive = document.querySelector('.publicReportageSlide
 const deuxArticleGauche = document.querySelector('.deuxArticleGauche');
 
 
-
+const API_URL = process.env.API_URL;
 
 function deuxPremieresPhrases(texte) {
     // Utilisation d'une expression régulière pour identifier les phrases
@@ -23,7 +23,7 @@ function deuxPremieresPhrases(texte) {
 }
 
 function getArticle () {
-    fetch('http://localhost:5000/publicreportage')
+    fetch(`${API_URL}/publicreportage`)
     .then(response => response.json())
     .then(data => {
         console.log(data);

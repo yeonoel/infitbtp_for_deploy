@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const articleId = urlParams.get('id');
+    const API_URL = process.env.API_URL;
     console.log(articleId)
     if (articleId) {
-        fetch(`http://localhost:5000/enquetesExclusives/${articleId}`)
+        fetch(`${API_URL}/enquetesExclusives/${articleId}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);

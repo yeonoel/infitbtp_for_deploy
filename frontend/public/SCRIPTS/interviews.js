@@ -2,6 +2,7 @@ const principalVideo = document.querySelector('.principalVideo');
 const video_grid = document.querySelector('.video_grid');
 const principalideo = document.querySelector('.principalVideo');
 
+const API_URL = process.env.API_URL;
 
 // function playVideo(videoId) {
 //     let video = document.getElementById(videoId);
@@ -15,7 +16,7 @@ const principalideo = document.querySelector('.principalVideo');
 function getInterwiews () {
 
     
-fetch('http://localhost:5000/interviews')
+fetch(`${API_URL}/interviews`)
 .then(response => response.json())
 .then(data => {
     //utilisation des données recuperées dépuis la base de donnée

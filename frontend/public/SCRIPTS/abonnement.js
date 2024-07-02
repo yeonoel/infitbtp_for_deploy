@@ -2,6 +2,9 @@
 
 const newsmain = document.querySelector('.newsmain');
 const formNewsLetter = document.querySelector('.formNewsLetter');
+const API_URL = process.env.API_URL;
+
+
 
 formNewsLetter.innerHTML = 
 `
@@ -27,7 +30,7 @@ document.getElementById('newsletterForm').addEventListener('submit', function(e)
 
     var email = document.getElementById('abonnemenrEmail').value;
 
-    fetch('http://localhost:5000/abonnement', { 
+    fetch(`${API_URL}/abonnement`, { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
