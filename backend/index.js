@@ -17,6 +17,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, '/images')));
 
 injectionMiddlewares(app);
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
 injectionRoutes(app);
 
 // Route pour servir index.html
